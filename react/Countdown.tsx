@@ -2,11 +2,9 @@ import React, { useState } from 'react'
 import { TimeSplit } from './typings/global'
 import { tick } from './utils/time'
 import { useCssHandles } from 'vtex.css-handles'
-import { FormattedMessage } from 'react-intl'
+import {FormattedMessage} from 'react-intl'
 
-const DEFAULT_TARGET_DATE = (new Date('2020-06-25')).toISOString()
 const CSS_HANDLES = ["container", "countdown", "title"]
-const titleText = title || <FormattedMessage id="countdown.title"/>
 
 interface CountdownProps {
   title: string
@@ -22,6 +20,7 @@ const Countdown: StorefrontFunctionComponent<CountdownProps> = ({
     minutes: '00',
     seconds: '00',
   })
+
 
   const titleText = title || <FormattedMessage id="countdown.title" />
   const handles = useCssHandles(CSS_HANDLES)
