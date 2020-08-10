@@ -2,11 +2,14 @@ import React, { useState } from 'react'
 import { TimeSplit } from './typings/global'
 import { tick } from './utils/time'
 import { useCssHandles } from 'vtex.css-handles'
+import { FormattedMessage } from 'react-intl'
 
-const DEFAULT_TARGET_DATE = (new Date('2020-06-25')).toISOString();
-const CSS_HANDLES = ['countdown'];
+const DEFAULT_TARGET_DATE = (new Date('2020-06-25')).toISOString()
+const CSS_HANDLES = ['countdown']
+const titleText = title || <FormattedMessage id="countdown.title" />
 
 interface CountdownProps {
+  title: string
   targetDate: string;
 }
 
